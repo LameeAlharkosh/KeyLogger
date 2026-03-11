@@ -1,9 +1,3 @@
-بما أن هذا مشروع جامعي، يجب أن يكون ملف الـ **README** احترافياً، تقنياً، ويحتوي على "إخلاء مسؤولية أخلاقي" لضمان عدم استخدامه بشكل خاطئ.
-
-إليك محتوى ملف `README.md` جاهز للتنسيق:
-
----
-
 # Keyboard Input Monitor (Educational Security Project)
 
 ## 📌 Project Overview
@@ -40,7 +34,6 @@ Before building the project, update the following variables in `Program.cs`:
 private static string myEmail = "your-email@gmail.com";
 private static string myAppPassword = "your-app-password";
 
-```
 
 *Note: You must use a Google "App Password" if using Gmail.*
 
@@ -49,4 +42,4 @@ private static string myAppPassword = "your-app-password";
 **For Educational Purposes Only.**
 This software is intended for academic research and authorized security testing. The author is not responsible for any misuse or damage caused by this program. Unauthorized monitoring of computer systems is illegal and unethical.
 
----
+
